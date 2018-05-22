@@ -6,7 +6,7 @@ import NoteForm from './NoteForm'
 
 const Main = () => {
     return(
-        <div className="Main">
+        <div className="Main" style={style}>
             <Sidebar />
             <NoteList />
             <NoteForm />
@@ -14,6 +14,12 @@ const Main = () => {
     )
 }
 
+const style ={
+display: 'flex',
+height: '100vh',
+alignItems: 'strech'
+
+}
 
 // class Main extends React.Component{
 //     render(){

@@ -2,7 +2,7 @@ import React from 'react'
 
 const NoteForm = () => {
     return(
-        <div clasName="NoteForm">
+        <div className="NoteForm">
         NoteForm
         </div>
     )
