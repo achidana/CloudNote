@@ -1,21 +1,20 @@
 import React from 'react'
 
-import './NoteList.css'
+// import './NoteList.css'
 
 
 const NoteList = () => {
     return(
-        <div className="Notelist">
-        <div className="NoteList">
+                <div class="NoteList">
           <h3>Notes</h3>
           <ul id="notes">
-            <a className="active">
+            <a class="active">
               <li>
-                <div className="note">
-                  <div className="note-title">
+                <div class="note">
+                  <div class="note-title">
                     Kohlrabi welsh
                   </div>
-                  <div className="note-body">
+                  <div class="note-body">
                     <p>
                       Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
                     </p>
@@ -25,11 +24,11 @@ const NoteList = () => {
             </a>
             <a>
               <li>
-                <div className="note">
-                  <div className="note-title">
+                <div class="note">
+                  <div class="note-title">
                     Dandelion cucumber
                   </div>
-                  <div className="note-body">
+                  <div class="note-body">
                     <p>
                       Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
                     </p>
@@ -39,11 +38,11 @@ const NoteList = () => {
             </a>
             <a>
               <li>
-                <div className="note">
-                  <div className="note-title">
+                <div class="note">
+                  <div class="note-title">
                     Prairie turnip
                   </div>
-                  <div className="note-body">
+                  <div class="note-body">
                     <p>
                       Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.
                     </p>
@@ -52,7 +51,6 @@ const NoteList = () => {
               </li>
             </a>
           </ul>
-        </div>
         </div>
     )
 }
