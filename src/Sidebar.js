@@ -8,13 +8,18 @@ import newHover from './new-hover.png'
 
 
 
-const Sidebar = () => {
+const Sidebar = ({resetNote}) => {
     return(
        <nav className="Sidebar">
           <div className="logo">
             <img src={quill} alt="Noteherder" />
           </div>
-          <a className="new-note" href="/notes">
+          <a onClick={(ev)=>{
+            ev.preventDefault()
+            resetNote()
+                            }} 
+            className="new-note" 
+            href="/notes">
             <img src={newHover} alt="New note" />
             <img className="outline" src={newIcon} alt="New note" />
           </a>

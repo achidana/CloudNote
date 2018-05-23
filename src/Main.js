@@ -20,10 +20,7 @@ constructor(props)
     // }
 
     this.state = {
-        arr: {
-            title:"Title your note",
-            body: ''
-                }
+        arr: this.blankNote()
     }
 }
 
@@ -47,11 +44,26 @@ constructor(props)
         this.setState({arr:data})
     }
 
+    blankNote = () => {
+        return(
+             {
+            title:"Title your note",
+            body: ''
+            }
+        )
+    }
+
+    resetNote = ()=>{
+        return(
+            this.populateForm(this.blankNote())
+        )
+    }
+
 
     render(){
         return(
             <div className="Main">
-            <Sidebar />
+            <Sidebar resetNote={this.resetNote} />
             <NoteList populateForm = {this.populateForm} />
             <NoteForm data = {this.state.arr}  />
             </div>
