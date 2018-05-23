@@ -66,11 +66,11 @@ constructor(props)
         )
     }
 
-    // resetNote = ()=>{
-    //     return(
-    //         this.populateForm(this.blankNote())
-    //     )
-    // }
+    resetNote = ()=>{
+        return(
+            this.setCurrentNote(this.blankNote())
+        )
+    }
 
 
     render(){

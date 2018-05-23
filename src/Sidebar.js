@@ -15,6 +15,7 @@ const Sidebar = ({resetNote}) => {
             <img src={quill} alt="Noteherder" />
           </div>
           <a onClick={(ev)=>{
+            debugger;
             ev.preventDefault()
             resetNote()
                             }} 
