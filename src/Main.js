@@ -9,9 +9,41 @@ import NoteForm from './NoteForm'
 
 class Main extends React.Component{
 
+constructor(props)
+{
+    super(props)
+    // this.state = {
+    //     value: {
+    //         title: '',
+    //         body: ''
+    //     }
+    // }
+
+    this.state = {
+        arr: {
+            title:"Title your note",
+            body: ''
+                }
+    }
+}
+
     
-    populateForm(data){
-        console.log(data)
+    populateForm = (data) => {
+        // let temp= Object.assign({}, this.state.arr)
+        // temp.title=data.title
+        // temp.body=data.body
+    
+        // this.setState(
+        //     {
+        //         arr:temp
+        //     }
+        // )
+
+        this.setState(
+            {
+                arr:{title:data.title , body:data.body}
+            }
+        )
     }
 
 
@@ -20,7 +52,7 @@ class Main extends React.Component{
             <div className="Main">
             <Sidebar />
             <NoteList data = {this.populateForm} />
-            <NoteForm />
+            <NoteForm data = {this.state.arr}  />
             </div>
         )
     }

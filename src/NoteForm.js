@@ -1,9 +1,35 @@
 import React from 'react'
 // import './NoteForm.css'
 
-const NoteForm = () => {
+// const NoteForm = () => {
+//     return(
+//         <div className="NoteForm">
+//           <div className="form-actions">
+//             <button type="button">
+//               <i className="fa fa-trash-o"></i>
+//             </button>
+//           </div>
+//           <form>
+//             <p>
+//               <input
+//                 type="text"
+//                 name="title"
+//                 placeholder="Title your note"
+//               />
+//             </p>
+            
+//             <textarea name="body"></textarea>
+//           </form>
+//         </div>
+        
+//     )
+// }
+
+
+class NoteForm extends React.Component{
+  render(){
     return(
-        <div className="NoteForm">
+      <div className="NoteForm">
           <div className="form-actions">
             <button type="button">
               <i className="fa fa-trash-o"></i>
@@ -14,15 +40,15 @@ const NoteForm = () => {
               <input
                 type="text"
                 name="title"
-                placeholder="Title your note"
+                placeholder={this.props.data.title}
               />
             </p>
             
-            <textarea name="body"></textarea>
+            <textarea name="body" value={this.props.data.body}></textarea>
           </form>
         </div>
-        
     )
+  }
 }
 
 export default NoteForm
