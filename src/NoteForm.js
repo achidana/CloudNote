@@ -3,10 +3,10 @@ import React from 'react'
 
 const NoteForm = () => {
     return(
-        <div class="NoteForm">
-          <div class="form-actions">
+        <div className="NoteForm">
+          <div className="form-actions">
             <button type="button">
-              <i class="fa fa-trash-o"></i>
+              <i className="fa fa-trash-o"></i>
             </button>
           </div>
           <form>
@@ -24,6 +24,5 @@ const NoteForm = () => {
         
     )
 }
-
 
 export default NoteForm
