@@ -2,7 +2,7 @@ import React from 'react'
 
 // import './NoteList.css'
 
- const NoteList=(props) =>{
+const NoteList = (props) => {
   // constructor(props){
   //   super(props)
   //   this.state={
@@ -14,40 +14,40 @@ import React from 'react'
   //   }
 
   // }
-    return(
-      <div  className='NoteList'>
+  return (
+    <div className='NoteList'>
       <h3>Notes</h3>
       <ul id="notes">
         {
-          props.arr.map(n=>{
-          return(
-            <a  onClick={()=>{props.setCurrentNote(n) }}        key={props.arr.indexOf(n)}>
-              <li >
-                <div className="note">
-                  <div className="note-title">
-                    {n.title}
+          props.arr.map(n => {
+            return (
+              <a onClick={() => { props.setCurrentNote(n) }} key={props.arr.indexOf(n)}>
+                <li >
+                  <div className="note">
+                    <div className="note-title">
+                      {n.title}
+                    </div>
+                    <div className="note-body">
+                      <p>
+                        {n.body}
+                      </p>
+                    </div>
                   </div>
-                  <div className="note-body">
-                    <p>
-                      {n.body}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </a>
+                </li>
+              </a>
+            )
+          }
           )
         }
-        )
-        }
-        
-
-        </ul>
 
 
-        </div>
-    )
-  }
+      </ul>
 
-  
+
+    </div>
+  )
+}
+
+
 
 export default NoteList
