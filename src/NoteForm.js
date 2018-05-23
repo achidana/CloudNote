@@ -26,8 +26,8 @@ import React from 'react'
 // }
 
 
-class NoteForm extends React.Component{
-  render(){
+const NoteForm= ({currentNote}) => {
+  
     return(
       <div className="NoteForm">
           <div className="form-actions">
@@ -40,15 +40,15 @@ class NoteForm extends React.Component{
               <input
                 type="text"
                 name="title"
-                placeholder={this.props.data.title}
+                placeholder={currentNote.title}
               />
             </p>
             
-            <textarea name="body" value={this.props.data.body}></textarea>
+            <textarea name="body" value={currentNote.body}></textarea>
           </form>
         </div>
     )
   }
-}
+
 
 export default NoteForm

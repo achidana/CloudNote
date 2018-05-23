@@ -20,12 +20,21 @@ constructor(props)
     // }
 
     this.state = {
-        arr: this.blankNote()
+        //arr: this.blankNote()
+        arr:
+        [
+        {title:'Kohlrabi welsh', body:'Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.'},
+        {title:'Dandelion cucumber', body:'Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.'},
+        {title:'Prairie turnip',body:'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.'}
+        ],
+        
+
+        currentNote:this.blankNote()
     }
 }
 
     
-    populateForm = (data) => {
+    setCurrentNote = (data) => {
         // let temp= Object.assign({}, this.state.arr)
         // temp.title=data.title
         // temp.body=data.body
@@ -41,7 +50,11 @@ constructor(props)
         //         arr:{title:data.title , body:data.body}
         //     }
         // )
-        this.setState({arr:data})
+        //this.setState({arr:data})
+
+
+        console.log(data)
+        this.setState({currentNote:data})
     }
 
     blankNote = () => {
@@ -53,19 +66,19 @@ constructor(props)
         )
     }
 
-    resetNote = ()=>{
-        return(
-            this.populateForm(this.blankNote())
-        )
-    }
+    // resetNote = ()=>{
+    //     return(
+    //         this.populateForm(this.blankNote())
+    //     )
+    // }
 
 
     render(){
         return(
             <div className="Main">
             <Sidebar resetNote={this.resetNote} />
-            <NoteList populateForm = {this.populateForm} />
-            <NoteForm data = {this.state.arr}  />
+            <NoteList setCurrentNote={this.setCurrentNote}  arr = {this.state.arr} />
+            <NoteForm currentNote = {this.state.currentNote}  />
             </div>
         )
     }

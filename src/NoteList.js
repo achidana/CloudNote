@@ -2,27 +2,26 @@ import React from 'react'
 
 // import './NoteList.css'
 
-class NoteList extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      note:[
-        {title:'Kohlrabi welsh', body:'Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.'},
-        {title:'Dandelion cucumber', body:'Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.'},
-        {title:'Prairie turnip',body:'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.'}
-      ]
-    }
+ const NoteList=(props) =>{
+  // constructor(props){
+  //   super(props)
+  //   this.state={
+  //     note:[
+  //       {title:'Kohlrabi welsh', body:'Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.'},
+  //       {title:'Dandelion cucumber', body:'Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.'},
+  //       {title:'Prairie turnip',body:'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.'}
+  //     ]
+  //   }
 
-  }
-  render(){
+  // }
     return(
       <div  className='NoteList'>
       <h3>Notes</h3>
       <ul id="notes">
         {
-          this.state.note.map(n=>{
+          props.arr.map(n=>{
           return(
-            <a  onClick={()=>{this.props.populateForm(n) }}        key={this.state.note.indexOf(n)}>
+            <a  onClick={()=>{props.setCurrentNote(n) }}        key={props.arr.indexOf(n)}>
               <li >
                 <div className="note">
                   <div className="note-title">
@@ -50,5 +49,5 @@ class NoteList extends React.Component{
   }
 
   
-}
+
 export default NoteList
