@@ -16,13 +16,13 @@ class NoteList extends React.Component{
   }
   render(){
     return(
-      <div notes={this.state.note} className='NoteList'>
+      <div  className='NoteList'>
       <h3>Notes</h3>
       <ul id="notes">
         {
           this.state.note.map(n=>{
           return(
-            <a key={this.state.note.indexOf(n)}>
+            <a  onClick={()=>{this.props.data(n) }}        key={this.state.note.indexOf(n)}>
               <li >
                 <div className="note">
                   <div className="note-title">
