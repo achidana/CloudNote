@@ -39,11 +39,12 @@ constructor(props)
         //     }
         // )
 
-        this.setState(
-            {
-                arr:{title:data.title , body:data.body}
-            }
-        )
+        // this.setState(
+        //     {
+        //         arr:{title:data.title , body:data.body}
+        //     }
+        // )
+        this.setState({arr:data})
     }
 
 
@@ -51,7 +52,7 @@ constructor(props)
         return(
             <div className="Main">
             <Sidebar />
-            <NoteList data = {this.populateForm} />
+            <NoteList populateForm = {this.populateForm} />
             <NoteForm data = {this.state.arr}  />
             </div>
         )

@@ -22,7 +22,7 @@ class NoteList extends React.Component{
         {
           this.state.note.map(n=>{
           return(
-            <a  onClick={()=>{this.props.data(n) }}        key={this.state.note.indexOf(n)}>
+            <a  onClick={()=>{this.props.populateForm(n) }}        key={this.state.note.indexOf(n)}>
               <li >
                 <div className="note">
                   <div className="note-title">
