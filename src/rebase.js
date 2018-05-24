@@ -8,6 +8,8 @@ const app = firebase.initializeApp({
     databaseURL: "https://noteherder-dd790.firebaseio.com",
     projectId: "noteherder-dd790",
     storageBucket: "noteherder-dd790.appspot.com",
+
+    
     messagingSenderId: "875679986580"
 });
 
