@@ -23,9 +23,7 @@ class Main extends React.Component {
             //arr: this.blankNote()
             arr:
                 [
-                    { id:counter++ ,title: 'Kohlrabi welsh', body: 'Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.' },
-                    { id:counter++ ,title: 'Dandelion cucumber', body: 'Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.' },
-                    { id:counter++ ,title: 'Prairie turnip', body: 'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.' }
+                    
                 ],
 
 
@@ -71,7 +69,7 @@ class Main extends React.Component {
         //this.setState({arr:data})
 
 
-        console.log(data)
+        //console.log(data)
         this.setState({ currentNote: data })
     }
 
@@ -90,13 +88,29 @@ class Main extends React.Component {
         )
     }
 
+    deleteNote = (currentNote)=> {
+        const tempArr = [...this.state.arr]
+        const index = tempArr.indexOf(currentNote)
+        console.log(index)
+        if(index===-1)
+        {
+            return
+        }
+        tempArr.splice(index,1)
+        this.setState({arr:tempArr, currentNote:this.blankNote()})
+
+
+    }
+
+     
+
 
     render() {
         return (
             <div className="Main">
                 <Sidebar resetNote={this.resetNote} />
                 <NoteList setCurrentNote={this.setCurrentNote} arr={this.state.arr} />
-                <NoteForm currentNote={this.state.currentNote}   saveNote={this.saveNote}/>
+                <NoteForm currentNote={this.state.currentNote}   saveNote={this.saveNote} deleteNote={this.deleteNote}/>
             </div>
         )
     }

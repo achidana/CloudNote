@@ -28,7 +28,7 @@ import React from 'react'
 
 
 
-const NoteForm = ({ currentNote ,saveNote }) => {
+const NoteForm = ({ currentNote ,saveNote ,deleteNote}) => {
 
   const handleChanges = (ev)=>{
     const temp = {...currentNote}
@@ -37,10 +37,12 @@ const NoteForm = ({ currentNote ,saveNote }) => {
        
   }
 
+  
+
   return (
     <div className="NoteForm">
       <div className="form-actions">
-        <button type="button">
+        <button type="button" onClick={() => deleteNote(currentNote)}>
           <i className="fa fa-trash-o"></i>
         </button>
       </div>
