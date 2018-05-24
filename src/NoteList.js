@@ -14,10 +14,14 @@ const NoteList = (props) => {
   //   }
 
   // }
+
+  // const temp = [...props.arr];
   return (
     <div className='NoteList'>
       <h3>Notes</h3>
       <ul id="notes">
+        {          console.log(props.arr)
+}
         {
           props.arr.map(n => {
             return (

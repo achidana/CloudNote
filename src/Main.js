@@ -3,6 +3,8 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
+import base from './rebase'
+
 
 let counter=0;
 
@@ -12,23 +14,24 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props)
-        // this.state = {
-        //     value: {
-        //         title: '',
-        //         body: ''
-        //     }
-        // }
+       
 
         this.state = {
             //arr: this.blankNote()
-            arr:
-                [
-                    
-                ],
-
+            // arr: JSON.parse(localStorage.getItem('array')),
+            arr:[],
 
             currentNote: this.blankNote()
         }
+    }
+
+    componentWillMount(){
+        //console.log(this.state.arr)
+        base.syncState('arr',{
+            context:this,
+            state: 'arr',
+            asArray: true
+        })
     }
 
     saveNote = (note) =>{
@@ -46,6 +49,7 @@ class Main extends React.Component {
 
         this.setState({arr:tempArr})
         this.setState({currentNote:note})
+        //localStorage.setItem('array', JSON.stringify(this.state.arr));
 
     }
 
@@ -98,6 +102,7 @@ class Main extends React.Component {
         }
         tempArr.splice(index,1)
         this.setState({arr:tempArr, currentNote:this.blankNote()})
+        //localStorage.setItem('array', JSON.stringify(this.state.arr));
 
 
     }
